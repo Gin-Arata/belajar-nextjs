@@ -1,5 +1,7 @@
 import NavbarLayout from "../NavbarLayout";
 import FooterLayout from "../FooterLayout";
+import { useRouter } from "next/router";
+import path from "path";
 
 type AppShellLayoutProps = {
   children: React.ReactNode;
@@ -7,12 +9,15 @@ type AppShellLayoutProps = {
 
 const AppShellLayout = (props: AppShellLayoutProps) => {
   const { children } = props;
+  const {pathname} = useRouter();
+
+  const disableNavbarFooter = ["/auth/login", "/auth/register"];
 
   return (
     <main>
-      <NavbarLayout />
+      {!disableNavbarFooter.includes(pathname) && <NavbarLayout />}
       {children}
-      <FooterLayout />
+      {!disableNavbarFooter.includes(pathname) && <FooterLayout />}
     </main>
   );
 };
