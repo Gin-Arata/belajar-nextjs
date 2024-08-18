@@ -11,7 +11,7 @@ const AppShellLayout = (props: AppShellLayoutProps) => {
   const { children } = props;
   const {pathname} = useRouter();
 
-  const disableNavbarFooter = ["/auth/login", "/auth/register"];
+  const disableNavbarFooter = ["/auth/login", "/auth/register", "/404"];
 
   return (
     <main>

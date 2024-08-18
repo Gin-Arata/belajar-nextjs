@@ -6,10 +6,10 @@ const ProductPage = () => {
   const { push } = useRouter();
 
   useEffect(() => {
-    if(!isLogin) {
+    if (!isLogin) {
       push("/auth/login");
     }
-  })
+  });
 
   return (
     <div>
