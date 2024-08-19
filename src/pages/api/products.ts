@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { retrieveData } from "@/lib/service";
+import { retrieveData } from "@/lib/firebase/service";
+import { ProductType } from "@/types/ProductType";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {

@@ -1,10 +1,5 @@
-type ProductType = {
-  id: string;
-  name: string;
-  price: number;
-  category: string;
-  image: string;
-};
+import { ProductType } from "@/types/ProductType";
+
 
 const ProductView = ({ products }: { products: ProductType[] }) => {
   const skeletonArray = Array.from({ length: 6 });
