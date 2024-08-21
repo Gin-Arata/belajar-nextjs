@@ -1,7 +1,6 @@
 import { fetcher } from "@/lib/swr/fetcher";
 import { ProductType } from "@/types/ProductType";
 import DetailProductView from "@/views/Product/detail";
-import SkeletonCardProduct from "@/views/Product/skeleton";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 

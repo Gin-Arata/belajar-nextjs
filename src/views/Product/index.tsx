@@ -7,8 +7,8 @@ const ProductView = ({ products }: { products: ProductType[] }) => {
   const skeletonArray = Array.from({ length: 6 });
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold text-center mb-4">Product</h1>
+    <div className="flex flex-col items-center">
+      <h1 className="text-2xl font-bold mb-4">Product</h1>
       <div className="grid grid-cols-3 gap-2 px-10">
         {products.length > 0 ? (
           <>
