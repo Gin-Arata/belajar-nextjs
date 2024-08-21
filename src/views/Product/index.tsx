@@ -1,4 +1,6 @@
 import { ProductType } from "@/types/ProductType";
+import Link from "next/link";
+import SkeletonCardProduct from "./skeleton";
 
 
 const ProductView = ({ products }: { products: ProductType[] }) => {
@@ -11,7 +13,7 @@ const ProductView = ({ products }: { products: ProductType[] }) => {
         {products.length > 0 ? (
           <>
             {products.map((product: ProductType) => (
-              <div key={product.id}>
+              <Link href={`/product/${product.id}`} key={product.id}>
                 <div className="w-96">
                   <img src={product.image} alt={product.name} />
                 </div>
@@ -25,24 +27,13 @@ const ProductView = ({ products }: { products: ProductType[] }) => {
                     })}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </>
         ) : (
           <>
             {skeletonArray.map((_, index) => (
-              <>
-                <div className="w-96" key={index}>
-                  <div className="w-full">
-                    <div className="w-96 aspect-square bg-gray-300 animate-pulse"></div>
-                    <div className="flex flex-col mt-2">
-                      <p className="text-lg font-bold w-full h-6 bg-gray-300 animate-pulse"></p>
-                      <p className="w-full h-4 bg-gray-300 animate-pulse mt-2"></p>
-                      <p className="w-1/2 h-4 bg-gray-300 animate-pulse mt-2"></p>
-                    </div>
-                  </div>
-                </div>
-              </>
+              <SkeletonCardProduct key={index}/>
             ))}
           </>
         )}
